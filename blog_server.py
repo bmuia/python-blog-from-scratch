@@ -2,8 +2,8 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import os
 import json
 
-HOST = '127.0.0.1' 
-PORT = 7000
+HOST = '0.0.0.0' 
+ORT = int(os.environ.get("PORT", 7000)) 
 
 class BlogHandlerServer(BaseHTTPRequestHandler):
     def do_GET(self):
