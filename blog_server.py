@@ -3,7 +3,7 @@ import os
 import json
 
 HOST = '0.0.0.0' 
-ORT = int(os.environ.get("PORT", 7000)) 
+PORT = int(os.environ.get("PORT", 7000)) 
 
 class BlogHandlerServer(BaseHTTPRequestHandler):
     def do_GET(self):
