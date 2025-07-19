@@ -24,7 +24,7 @@ class BlogHandlerServer(BaseHTTPRequestHandler):
 
         # Serve index.html
         if self.path == '/':
-            file_path = '/index.html'
+            file_path = 'index.html'
         else:
             file_path = self.path.strip("/") 
         if os.path.exists(file_path):
