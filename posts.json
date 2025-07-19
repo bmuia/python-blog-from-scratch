@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "title": "Welcome to My Blog",
+    "content": "This is the first post of my personal blog!",
+    "author": "Belam",
+    "date": "2025-07-19"
+  },
+  {
+    "id": 2,
+    "title": "Learning Python Servers",
+    "content": "I wrote my first socket server in raw Python today.",
+    "author": "Belam",
+    "date": "2025-07-19"
+  },
+  {
+    "id": 3,
+    "title": "Understanding HTTP Requests",
+    "content": "Diving deep into GET and POST methods using sockets.",
+    "author": "Belam",
+    "date": "2025-07-19"
+  },
+  {
+    "id": 4,
+    "title": "My Dev Setup",
+    "content": "I'm using Linux, Brave browser, and VS Code to build everything.",
+    "author": "Belam",
+    "date": "2025-07-19"
+  },
+  {
+    "id": 5,
+    "title": "What is a Server?",
+    "content": "Today I learned that servers listen for requests and respond with data.",
+    "author": "Belam",
+    "date": "2025-07-19"
+  },
+  {
+    "id": 6,
+    "title": "Writing JSON by Hand",
+    "content": "I created my own JSON files to store blog data. Super fun!",
+    "author": "Belam",
+    "date": "2025-07-19"
+  },
+  {
+    "id": 7,
+    "title": "Building Without Frameworks",
+    "content": "No Flask or Django—just pure Python and sockets. Feels good!",
+    "author": "Belam",
+    "date": "2025-07-19"
+  },
+  {
+    "id": 8,
+    "title": "Why I Love the Terminal",
+    "content": "Running servers, editing files, and debugging all from my terminal.",
+    "author": "Belam",
+    "date": "2025-07-19"
+  },
+  {
+    "id": 9,
+    "title": "Handling Routes Manually",
+    "content": "Today I manually routed '/' and '/favicon.ico'—no router needed.",
+    "author": "Belam",
+    "date": "2025-07-19"
+  },
+  {
+    "id": 10,
+    "title": "Next Steps in My Learning",
+    "content": "Plan: Add blog editing, delete, and maybe a mini CMS in raw Python.",
+    "author": "Belam",
+    "date": "2025-07-19"
+  }
+]

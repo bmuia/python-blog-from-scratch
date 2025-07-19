@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Real Blog</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #fafafa;
+      color: #333;
+    }
+
+    header {
+      background-color: #222;
+      color: white;
+      padding: 20px 40px;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      background-color: #111;
+      padding: 10px 40px;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: #f0c040;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .post {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      margin-bottom: 35px;
+      transition: transform 0.2s ease;
+    }
+
+    .post:hover {
+      transform: scale(1.01);
+    }
+
+    .post h2 {
+      margin-top: 0;
+      color: #222;
+    }
+
+    .post p {
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .post .meta {
+      font-size: 0.85em;
+      color: #777;
+      margin-top: 15px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      font-size: 0.9em;
+      color: #aaa;
+    }
+
+    @media (max-width: 600px) {
+      header, nav {
+        text-align: center;
+      }
+
+      main {
+        padding: 0 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>My Real Blog</header>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Posts</a>
+    <a href="#">About</a>
+  </nav>
+
+  <main id="posts-container">
+    <!-- Posts will be loaded here -->
+  </main>
+
+  <footer>
+    &copy; 2025 My Blog. All rights reserved.
+  </footer>
+
+  <script>
+    const url = 'http://127.0.0.1:7000/posts';
+
+    fetch(url)
+      .then(response => {
+        if (!response.ok) throw new Error('Network response error');
+        return response.json();
+      })
+      .then(posts => {
+        const container = document.getElementById('posts-container');
+
+        posts.forEach(post => {
+          const postEl = document.createElement('div');
+          postEl.className = 'post';
+
+          postEl.innerHTML = `
+            <h2>${post.title}</h2>
+            <p>${post.content}</p>
+            <div class="meta">
+              By <strong>${post.author}</strong> — 
+              <em>${new Date(post.date).toLocaleDateString()}</em>
+            </div>
+          `;
+
+          container.appendChild(postEl);
+        });
+      })
+      .catch(err => {
+        console.error('Error:', err);
+        document.getElementById('posts-container').innerHTML = "<p>Couldn't load posts.</p>";
+      });
+  </script>
+</body>
+</html>
